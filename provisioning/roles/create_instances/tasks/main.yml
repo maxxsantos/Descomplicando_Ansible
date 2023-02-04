@@ -1,2 +1,3 @@
 ---
 # tasks file for create_instances
+- import_tasks: create-instances.yml
