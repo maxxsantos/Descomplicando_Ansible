@@ -2,7 +2,7 @@
 # vars file for create_instances
 instance_type: t2.medium
 sec_group_name: giropops
-image: ami-00874d747dde814fa
+image: ami-0778521d914d23bc1
 keypair: ansible-class
 region: us-east-1
 count: 3
