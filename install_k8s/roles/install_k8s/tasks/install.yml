@@ -36,3 +36,10 @@
     - kubeadm
     - kubectl
   notify: Restart Kubelet
+
+- name: Removendo containerd config.toml
+  file:
+    path: /etc/containerd/config.toml
+    state: absent
+  changed_when: True
+  notify: Restart Containerd
