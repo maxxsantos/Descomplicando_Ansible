@@ -18,3 +18,9 @@
   user: ubuntu
   roles:
   - { role: create_cluster, tags: ["create_cluster_role"] }
+
+- hosts: k8s-workers
+  become: yes
+  user: ubuntu
+  roles:
+  - { role: join_cluster, tags: ["join_cluster_role"] }
