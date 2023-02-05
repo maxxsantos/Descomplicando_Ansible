@@ -12,3 +12,9 @@
     changed_when: '"Setting up python" in install_python.stdout'
   roles:
   - { role: install_k8s, tags: ["install_k8s_role"]  } 
+
+- hosts: k8s-master
+  become: yes
+  user: ubuntu
+  roles:
+  - { role: create_cluster, tags: ["create_cluster_role"] }
