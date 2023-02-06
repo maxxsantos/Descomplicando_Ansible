@@ -1,0 +1,16 @@
+---
+- name: Download Helm
+  get_url:
+    url: "{{ link_helm_download  }}"
+    dest: ~/get_helm.sh
+    mode: '0700'
+  register: download_helm
+
+- name: Instalando Helm
+  command: ~/get_helm.sh
+  when: download_helm.status_code | int == 200
+  register: install_helm
+
+- name: Variavel Var
+  debug: var=install_helm
+
