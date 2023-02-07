@@ -1,0 +1,17 @@
+---
+- name: Configurações Iniciais
+  hosts: local
+  become: yes
+  become_user: root
+  tasks:
+    - name: Atualização Python
+      apt:
+        name: python3
+        state: present
+    - name: Instalação PIP
+      apt:
+        name: python3-pip
+    - name: Instalação Boto3
+      pip:
+        name: boto3
+
