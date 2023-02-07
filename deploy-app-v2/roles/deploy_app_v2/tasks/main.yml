@@ -1,0 +1,3 @@
+---
+# tasks file for deploy_app_v2
+- import_tasks: deploy-app-v2.yml
