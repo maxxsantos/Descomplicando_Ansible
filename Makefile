@@ -34,8 +34,14 @@ deploy-v1:
 deploy-v2:
 	$(call execute_ansible_playbook,$(host_deploy_app_v2),$(main_deploy_app_v2),$(plus))
 
+play:
+	$(call execute_ansible_playbook,$(host_provisioning),$(main_provisioning),$(plus))
+	$(call execute_ansible_playbook,$(host_install_k8s),$(main_install_k8s),$(plus))
+	$(call execute_ansible_playbook,$(host_deploy_app_v1),$(main_deploy_app_v1),$(plus))
+
 all:
 	$(call execute_ansible_playbook,$(host_init_configs),$(main_init_configs),$(plus)) --ask-become-pass 
 	$(call execute_ansible_playbook,$(host_provisioning),$(main_provisioning),$(plus))
 	$(call execute_ansible_playbook,$(host_install_k8s),$(main_install_k8s),$(plus))
 	$(call execute_ansible_playbook,$(host_deploy_app_v1),$(main_deploy_app_v1),$(plus))
+	$(call execute_ansible_playbook,$(host_deploy_app_v2),$(main_deploy_app_v2),$(plus))
