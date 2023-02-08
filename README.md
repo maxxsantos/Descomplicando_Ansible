@@ -10,7 +10,7 @@ Todos os comandos são executados com Makefile para facilitar a automação.
 * `make play`: Executa os playbooks provisioning, install_k8s e deploy-app-v1
 * `make all`: Executa todos os playbooks
 
-É possível passar parâmetros para rodar esses playbook utilizando a flag plus.
+É possível passar parâmetros para rodar esses playbook utilizando a flag `plus`.
 Exemplo:
 
 ```bash
